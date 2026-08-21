@@ -1,0 +1,716 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Instagram Web Layout</title>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    />
+    <!-- OUR MAIN CSS -->
+    <link rel="stylesheet" href="assets/css/index.css" />
+  </head>
+  <body>
+    <!-- OUR MAIN CONTENT GOES HERE -->
+
+    <!-- OUR APP SHELL -->
+    <div class="app-container">
+      <aside class="sidebar">
+        <!-- BRAND LOGO -->
+        <a href="#" class="brand-logo">
+          <i class="ph-bold ph-instagram-logo"></i>
+          <span>Instagram</span>
+        </a>
+        <!-- USER PROFILE CARD -->
+        <div class="user-profile-card">
+          <div class="user-avatar-wrapper">
+            <img
+              src="https://i.pravatar.cc/150?img=12"
+              alt="avatar"
+              class="user-avatar"
+            />
+          </div>
+          <h2 class="user-name">SAM</h2>
+          <span class="user-handle">@sam</span>
+          <!-- The three stat row (posts, followers, following) -->
+          <div class="profile-stats">
+            <div class="stat-item">
+              <span class="stat-value">12</span>
+              <span class="stat-label">Posts</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value">12.4k</span>
+              <span class="stat-label">Followers</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value">288</span>
+              <span class="stat-label">Following</span>
+            </div>
+          </div>
+          <p class="user-bio">SAM <br />Developer | Designer | Writer</p>
+        </div>
+        <!-- STORY HIGHLIGHT -->
+        <div class="highlights-section">
+          <h3 class="highlights-title">Story Highlights</h3>
+          <div class="highlights-container">
+            <div class="highlight-item">
+              <div class="highlight-ring">
+                <i class="ph ph-plus highlight-add"></i>
+              </div>
+              <span class="highlight-label">New</span>
+            </div>
+            <div class="highlight-item">
+              <div class="highlight-ring">
+                <img
+                  src="https://images.unsplash.com/photo-1497250681960-ef046c08a56e?w=200"
+                  alt="flowers"
+                  class="highlight-img"
+                />
+              </div>
+              <span class="highlight-label">Flowers</span>
+            </div>
+            <div class="highlight-item">
+              <div class="highlight-ring">
+                <img
+                  src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=300"
+                  alt="food"
+                  class="highlight-img"
+                />
+              </div>
+              <span class="highlight-label">Food</span>
+            </div>
+            <div class="highlight-item">
+              <div class="highlight-ring">
+                <img
+                  src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=300"
+                  alt="travel"
+                  class="highlight-img"
+                />
+              </div>
+              <span class="highlight-label">Travel</span>
+            </div>
+          </div>
+        </div>
+        <!-- SIDEBAR NAVIGATION MENU -->
+        <nav class="nav-menu">
+          <a href="#" class="nav-item active">
+            <i class="ph-fill ph-house"></i>
+            <span>Feed</span>
+          </a>
+          <a href="#" class="nav-item">
+            <i class="ph ph-compass"></i>
+            <span>Explore</span>
+          </a>
+          <a href="#" class="nav-item">
+            <i class="ph ph-film-strip"></i>
+            <span>Reels</span>
+          </a>
+          <a href="#" class="nav-item">
+            <i class="ph ph-gear"></i>
+            <span>Settings</span>
+          </a>
+          <a href="#" class="nav-item" id="logoutBtn">
+            <i class="ph ph-sign-out"></i>
+            <span>Logout</span>
+          </a>
+        </nav>
+      </aside>
+      <!-- MAIN CONTENT -->
+
+      <main class="main-content">
+        <div class="mobile-top-header">
+          <button class="mobile-action-btn" id="mobileCreateBtn">
+            <i class="ph-bold ph-plus"></i>
+          </button>
+          <div class="mobile-logo">Instagram</div>
+          <button class="mobile-action-btn" id="mobileThemeToggleBtn">
+            <i class="ph ph-moon" id="mobileThemeIcon"></i>
+          </button>
+        </div>
+        <!-- HEADER (SEARCH + actions) -->
+        <header class="top-header">
+          <div class="search-box">
+            <i class="ph ph-magnifying-glass"></i>
+            <input
+              type="text"
+              class="search-input"
+              id="search-Input"
+              placeholder="Search creators, photos, tags..."
+            />
+          </div>
+          <!-- HEADER ACTIONS -->
+          <div class="header-actions">
+            <button class="icon-btn" id="themeToggleBtn" title="Toggle Theme">
+              <i class="ph ph-moon" id="themeIcon"></i>
+            </button>
+            <button class="icon-btn" title="Notifications">
+              <i class="ph ph-bell"></i>
+              <span class="badge-dot"></span>
+            </button>
+            <button class="icon-btn" title="Direct Messages">
+              <i class="ph ph-chat-circle-dots"></i>
+            </button>
+            <button class="btn-create-post" id="openCreatePostModal">
+              <i class="ph-bold ph-plus"></i>
+              <span>Create a post</span>
+            </button>
+          </div>
+        </header>
+        <!-- STORIES -->
+        <section class="stories-section">
+          <h2 class="section-title">Stories</h2>
+          <div class="stories-flex">
+  <div class="story-card">
+    <div class="story-ring-container your-story">
+      <img src="https://i.pravatar.cc/150?img=10" alt="my-story" class="story-avatar" />
+      <div class="story-add-badge">
+        <i class="ph-bold ph-plus"></i>
+      </div>
+    </div>
+    <span class="story-username">Your Story</span>
+  </div>
+
+  <div class="story-card">
+    <div class="story-ring-container unseen">
+      <img src="https://i.pravatar.cc/150?img=11" alt="my-story" class="story-avatar" />
+      <span class="story-live-badge">LIVE</span>
+    </div>
+    <span class="story-username">Alex</span>
+  </div>
+
+  <div class="story-card">
+    <div class="story-ring-container unseen">
+      <img src="https://i.pravatar.cc/150?img=1" alt="my-story" class="story-avatar" />
+    </div>
+    <span class="story-username">Sophia</span>
+  </div>
+
+  <div class="story-card">
+    <div class="story-ring-container unseen">
+      <img src="https://i.pravatar.cc/150?img=3" alt="my-story" class="story-avatar" />
+    </div>
+    <span class="story-username">Daniel</span>
+  </div>
+
+  <div class="story-card">
+    <div class="story-ring-container unseen">
+      <img src="https://i.pravatar.cc/150?img=4" alt="my-story" class="story-avatar" />
+    </div>
+    <span class="story-username">Emma</span>
+  </div>
+
+  <div class="story-card">
+    <div class="story-ring-container seen">
+      <img src="https://i.pravatar.cc/150?img=5" alt="my-story" class="story-avatar" />
+    </div>
+    <span class="story-username">James</span>
+  </div>
+
+  <div class="story-card">
+    <div class="story-ring-container unseen">
+      <img src="https://i.pravatar.cc/150?img=7" alt="my-story" class="story-avatar" />
+    </div>
+    <span class="story-username">Olivia</span>
+  </div>
+
+  <div class="story-card">
+    <div class="story-ring-container unseen">
+      <img src="https://i.pravatar.cc/150?img=9" alt="my-story" class="story-avatar" />
+    </div>
+    <span class="story-username">Michael</span>
+  </div>
+
+  <div class="story-card">
+    <div class="story-ring-container unseen">
+      <img src="https://i.pravatar.cc/150?img=13" alt="my-story" class="story-avatar" />
+    </div>
+    <span class="story-username">Mia</span>
+  </div>
+
+  <div class="story-card">
+    <div class="story-ring-container unseen">
+      <img src="https://i.pravatar.cc/150?img=14" alt="my-story" class="story-avatar" />
+    </div>
+    <span class="story-username">Noah</span>
+  </div>
+
+  <div class="story-card">
+    <div class="story-ring-container seen">
+      <img src="https://i.pravatar.cc/150?img=17" alt="my-story" class="story-avatar" />
+    </div>
+    <span class="story-username">Grace</span>
+  </div>
+
+  <div class="story-card">
+    <div class="story-ring-container unseen">
+      <img src="https://i.pravatar.cc/150?img=18" alt="my-story" class="story-avatar" />
+    </div>
+    <span class="story-username">Lucas</span>
+  </div>
+
+  <div class="story-card">
+    <div class="story-ring-container unseen">
+      <img src="https://i.pravatar.cc/150?img=22" alt="my-story" class="story-avatar" />
+    </div>
+    <span class="story-username">Lily</span>
+  </div>
+</div>
+        </section>
+        <!-- FEEDS -->
+        <section class="feed-section">
+          <h2 class="section-title">Feed</h2>
+          <div class="feed-grid" id="feedGrid">
+  <article class="post-card">
+    <div class="post-header">
+      <div class="post-author">
+        <img
+          src="https://i.pravatar.cc/150?img=1"
+          alt="author"
+          class="author-avatar"
+        />
+        <div class="author-info">
+          <h4 class="author-name">Alex</h4>
+          <span class="post-location">London, UK</span>
+        </div>
+      </div>
+      <div class="post-header-actions">
+        <button class="follow-btn">Follow</button>
+        <button class="more-btn">
+          <i class="ph ph-dots-three-horizontal"></i>
+        </button>
+      </div>
+    </div>
+    <div class="post-image-container">
+      <img
+        src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800"
+        alt="post-photo"
+        class="post-image"
+      />
+    </div>
+    <div class="post-content">
+      <div class="post-actions">
+        <div class="action-group">
+          <i class="ph ph-heart action-icon"></i>
+          <i class="ph ph-chat-circle action-icon"></i>
+          <i class="ph ph-paper-plane-tilt action-icon"></i>
+        </div>
+        <i class="ph ph-bookmark-simple action-icon"></i>
+      </div>
+      <div class="post-likes">
+        <i
+          class="ph-fill ph-heart"
+          style="color: #e11d48; vertical-align: middle"
+        ></i>
+        Liked by Daniel and <b>1,234</b> others
+      </div>
+      <p class="post-caption">Building something awesome 💻</p>
+    </div>
+  </article>
+
+  <article class="post-card">
+    <div class="post-header">
+      <div class="post-author">
+        <img
+          src="https://i.pravatar.cc/150?img=2"
+          alt="author"
+          class="author-avatar"
+        />
+        <div class="author-info">
+          <h4 class="author-name">Sophia</h4>
+          <span class="post-location">New York, USA</span>
+        </div>
+      </div>
+      <div class="post-header-actions">
+        <button class="follow-btn">Follow</button>
+        <button class="more-btn">
+          <i class="ph ph-dots-three-horizontal"></i>
+        </button>
+      </div>
+    </div>
+    <div class="post-image-container">
+      <img
+        src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=900"
+        alt="post-photo"
+        class="post-image"
+      />
+    </div>
+    <div class="post-content">
+      <div class="post-actions">
+        <div class="action-group">
+          <i class="ph ph-heart action-icon"></i>
+          <i class="ph ph-chat-circle action-icon"></i>
+          <i class="ph ph-paper-plane-tilt action-icon"></i>
+        </div>
+        <i class="ph ph-bookmark-simple action-icon"></i>
+      </div>
+      <div class="post-likes">
+        <i
+          class="ph-fill ph-heart"
+          style="color: #e11d48; vertical-align: middle"
+        ></i>
+        Liked by Olivia and <b>982</b> others
+      </div>
+      <p class="post-caption">A little inspiration for today ✨</p>
+    </div>
+  </article>
+
+  <article class="post-card">
+    <div class="post-header">
+      <div class="post-author">
+        <img
+          src="https://i.pravatar.cc/150?img=3"
+          alt="author"
+          class="author-avatar"
+        />
+        <div class="author-info">
+          <h4 class="author-name">Daniel</h4>
+          <span class="post-location">Sydney, Australia</span>
+        </div>
+      </div>
+      <div class="post-header-actions">
+        <button class="follow-btn">Follow</button>
+        <button class="more-btn">
+          <i class="ph ph-dots-three-horizontal"></i>
+        </button>
+      </div>
+    </div>
+    <div class="post-image-container">
+      <img
+        src="https://images.unsplash.com/photo-1500534623283-312aade485b7?w=900"
+        alt="post-photo"
+        class="post-image"
+      />
+    </div>
+    <div class="post-content">
+      <div class="post-actions">
+        <div class="action-group">
+          <i class="ph ph-heart action-icon"></i>
+          <i class="ph ph-chat-circle action-icon"></i>
+          <i class="ph ph-paper-plane-tilt action-icon"></i>
+        </div>
+        <i class="ph ph-bookmark-simple action-icon"></i>
+      </div>
+      <div class="post-likes">
+        <i
+          class="ph-fill ph-heart"
+          style="color: #e11d48; vertical-align: middle"
+        ></i>
+        Liked by Emma and <b>2,341</b> others
+      </div>
+      <p class="post-caption">Chasing new adventures 🌊</p>
+    </div>
+  </article>
+
+  <article class="post-card">
+    <div class="post-header">
+      <div class="post-author">
+        <img
+          src="https://i.pravatar.cc/150?img=4"
+          alt="author"
+          class="author-avatar"
+        />
+        <div class="author-info">
+          <h4 class="author-name">Emma</h4>
+          <span class="post-location">Paris, France</span>
+        </div>
+      </div>
+      <div class="post-header-actions">
+        <button class="follow-btn">Follow</button>
+        <button class="more-btn">
+          <i class="ph ph-dots-three-horizontal"></i>
+        </button>
+      </div>
+    </div>
+    <div class="post-image-container">
+      <img
+        src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=900"
+        alt="post-photo"
+        class="post-image"
+      />
+    </div>
+    <div class="post-content">
+      <div class="post-actions">
+        <div class="action-group">
+          <i class="ph ph-heart action-icon"></i>
+          <i class="ph ph-chat-circle action-icon"></i>
+          <i class="ph ph-paper-plane-tilt action-icon"></i>
+        </div>
+        <i class="ph ph-bookmark-simple action-icon"></i>
+      </div>
+      <div class="post-likes">
+        <i
+          class="ph-fill ph-heart"
+          style="color: #e11d48; vertical-align: middle"
+        ></i>
+        Liked by Lucas and <b>1,876</b> others
+      </div>
+      <p class="post-caption">Good food, good mood 🍽️</p>
+    </div>
+  </article>
+
+  <article class="post-card">
+    <div class="post-header">
+      <div class="post-author">
+        <img
+          src="https://i.pravatar.cc/150?img=5"
+          alt="author"
+          class="author-avatar"
+        />
+        <div class="author-info">
+          <h4 class="author-name">James</h4>
+          <span class="post-location">Melbourne, Australia</span>
+        </div>
+      </div>
+      <div class="post-header-actions">
+        <button class="follow-btn">Follow</button>
+        <button class="more-btn">
+          <i class="ph ph-dots-three-horizontal"></i>
+        </button>
+      </div>
+    </div>
+    <div class="post-image-container">
+      <img
+        src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=900"
+        alt="post-photo"
+        class="post-image"
+      />
+    </div>
+    <div class="post-content">
+      <div class="post-actions">
+        <div class="action-group">
+          <i class="ph ph-heart action-icon"></i>
+          <i class="ph ph-chat-circle action-icon"></i>
+          <i class="ph ph-paper-plane-tilt action-icon"></i>
+        </div>
+        <i class="ph ph-bookmark-simple action-icon"></i>
+      </div>
+      <div class="post-likes">
+        <i
+          class="ph-fill ph-heart"
+          style="color: #e11d48; vertical-align: middle"
+        ></i>
+        Liked by Mia and <b>743</b> others
+      </div>
+      <p class="post-caption">Coffee and quiet mornings ☕</p>
+    </div>
+  </article>
+
+  <article class="post-card">
+    <div class="post-header">
+      <div class="post-author">
+        <img
+          src="https://i.pravatar.cc/150?img=6"
+          alt="author"
+          class="author-avatar"
+        />
+        <div class="author-info">
+          <h4 class="author-name">Olivia</h4>
+          <span class="post-location">Rome, Italy</span>
+        </div>
+      </div>
+      <div class="post-header-actions">
+        <button class="follow-btn">Follow</button>
+        <button class="more-btn">
+          <i class="ph ph-dots-three-horizontal"></i>
+        </button>
+      </div>
+    </div>
+    <div class="post-image-container">
+      <img
+        src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=900"
+        alt="post-photo"
+        class="post-image"
+      />
+    </div>
+    <div class="post-content">
+      <div class="post-actions">
+        <div class="action-group">
+          <i class="ph ph-heart action-icon"></i>
+          <i class="ph ph-chat-circle action-icon"></i>
+          <i class="ph ph-paper-plane-tilt action-icon"></i>
+        </div>
+        <i class="ph ph-bookmark-simple action-icon"></i>
+      </div>
+      <div class="post-likes">
+        <i
+          class="ph-fill ph-heart"
+          style="color: #e11d48; vertical-align: middle"
+        ></i>
+        Liked by Alex and <b>3,102</b> others
+      </div>
+      <p class="post-caption">Collecting moments, not things ✈️</p>
+    </div>
+  </article>
+
+  <article class="post-card">
+    <div class="post-header">
+      <div class="post-author">
+        <img
+          src="https://i.pravatar.cc/150?img=7"
+          alt="author"
+          class="author-avatar"
+        />
+        <div class="author-info">
+          <h4 class="author-name">Michael</h4>
+          <span class="post-location">Vancouver, Canada</span>
+        </div>
+      </div>
+      <div class="post-header-actions">
+        <button class="follow-btn">Follow</button>
+        <button class="more-btn">
+          <i class="ph ph-dots-three-horizontal"></i>
+        </button>
+      </div>
+    </div>
+    <div class="post-image-container">
+      <img
+        src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=900"
+        alt="post-photo"
+        class="post-image"
+      />
+    </div>
+    <div class="post-content">
+      <div class="post-actions">
+        <div class="action-group">
+          <i class="ph ph-heart action-icon"></i>
+          <i class="ph ph-chat-circle action-icon"></i>
+          <i class="ph ph-paper-plane-tilt action-icon"></i>
+        </div>
+        <i class="ph ph-bookmark-simple action-icon"></i>
+      </div>
+      <div class="post-likes">
+        <i
+          class="ph-fill ph-heart"
+          style="color: #e11d48; vertical-align: middle"
+        ></i>
+        Liked by Sophia and <b>1,567</b> others
+      </div>
+      <p class="post-caption">Lost in the beauty of nature 🌲</p>
+    </div>
+  </article>
+
+  <article class="post-card">
+    <div class="post-header">
+      <div class="post-author">
+        <img
+          src="https://i.pravatar.cc/150?img=8"
+          alt="author"
+          class="author-avatar"
+        />
+        <div class="author-info">
+          <h4 class="author-name">Mia</h4>
+          <span class="post-location">Tokyo, Japan</span>
+        </div>
+      </div>
+      <div class="post-header-actions">
+        <button class="follow-btn">Follow</button>
+        <button class="more-btn">
+          <i class="ph ph-dots-three-horizontal"></i>
+        </button>
+      </div>
+    </div>
+    <div class="post-image-container">
+      <img
+        src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?w=900"
+        alt="post-photo"
+        class="post-image"
+      />
+    </div>
+    <div class="post-content">
+      <div class="post-actions">
+        <div class="action-group">
+          <i class="ph ph-heart action-icon"></i>
+          <i class="ph ph-chat-circle action-icon"></i>
+          <i class="ph ph-paper-plane-tilt action-icon"></i>
+        </div>
+        <i class="ph ph-bookmark-simple action-icon"></i>
+      </div>
+      <div class="post-likes">
+        <i
+          class="ph-fill ph-heart"
+          style="color: #e11d48; vertical-align: middle"
+        ></i>
+        Liked by James and <b>2,018</b> others
+      </div>
+      <p class="post-caption">Architecture that tells a story 🏙️</p>
+    </div>
+  </article>
+
+  <article class="post-card">
+    <div class="post-header">
+      <div class="post-author">
+        <img
+          src="https://i.pravatar.cc/150?img=9"
+          alt="author"
+          class="author-avatar"
+        />
+        <div class="author-info">
+          <h4 class="author-name">Grace</h4>
+          <span class="post-location">Mumbai, India</span>
+        </div>
+      </div>
+      <div class="post-header-actions">
+        <button class="follow-btn">Follow</button>
+        <button class="more-btn">
+          <i class="ph ph-dots-three-horizontal"></i>
+        </button>
+      </div>
+    </div>
+    <div class="post-image-container">
+      <img
+        src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=900"
+        alt="post-photo"
+        class="post-image"
+      />
+    </div>
+    <div class="post-content">
+      <div class="post-actions">
+        <div class="action-group">
+          <i class="ph ph-heart action-icon"></i>
+          <i class="ph ph-chat-circle action-icon"></i>
+          <i class="ph ph-paper-plane-tilt action-icon"></i>
+        </div>
+        <i class="ph ph-bookmark-simple action-icon"></i>
+      </div>
+      <div class="post-likes">
+        <i
+          class="ph-fill ph-heart"
+          style="color: #e11d48; vertical-align: middle"
+        ></i>
+        Liked by Daniel and <b>1,432</b> others
+      </div>
+      <p class="post-caption">Simple food, happy heart 🥗</p>
+    </div>
+  </article>
+</div>
+        </section>
+      </main>
+    </div>
+
+    <!-- MOBILE BOTTOM NAV -->
+    <div class="mobile-bottom-nav">
+      <button class="mobile-nav-btn active">
+        <i class="ph-fill ph-house"></i>
+      </button>
+      <button class="mobile-nav-btn">
+        <i class="ph ph-film-strip"></i>
+      </button>
+      <button class="mobile-nav-btn">
+        <i class="ph ph-paper-plane"></i>
+        <span class="nav-badge"></span>
+      </button>
+      <button class="mobile-nav-btn">
+        <i class="ph ph-magnifying-glass"></i>
+      </button>
+      <button class="mobile-nav-btn">
+        <img src="" alt="" class="nav-avatar" />
+      </button>
+    </div>
+    <!-- OUR MAIN JS -->
+    <script src="assets/js/index.js"></script>
+  </body>
+</html>
