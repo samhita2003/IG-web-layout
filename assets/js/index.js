@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const createPostBtn = document.getElementById("openCreatePostModal");
 
-
+ const noResults = document.getElementById("noResults");
 
 
   function setTheme(theme) {
@@ -262,52 +262,76 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-  if (SearchInput) {
+  // =========================================================
+// SEARCH / FILTER POSTS
+// =========================================================
 
-    SearchInput.addEventListener("input", () => {
+if (SearchInput) {
 
-      const searchValue =
-        SearchInput.value.toLowerCase().trim();
+  SearchInput.addEventListener("input", () => {
 
+    const searchValue =
+      SearchInput.value.toLowerCase().trim();
 
-      const posts =
-        feedGrid.querySelectorAll(".post-card");
+    const posts =
+      feedGrid.querySelectorAll(".post-card");
 
-
-      posts.forEach((post) => {
-
-        const author =
-          post
-            .querySelector(".author-name")
-            ?.textContent
-            .toLowerCase() || "";
+    let matchingPosts = 0;
 
 
-        const location =
-          post
-            .querySelector(".post-location")
-            ?.textContent
-            .toLowerCase() || "";
+    posts.forEach((post) => {
+
+      const author =
+        post
+          .querySelector(".author-name")
+          ?.textContent
+          .toLowerCase() || "";
 
 
-        const caption =
-          post
-            .querySelector(".post-caption")
-            ?.textContent
-            .toLowerCase() || "";
+      const location =
+        post
+          .querySelector(".post-location")
+          ?.textContent
+          .toLowerCase() || "";
 
 
-        const matches =
-          author.includes(searchValue) ||
-          location.includes(searchValue) ||
-          caption.includes(searchValue);
+      const caption =
+        post
+          .querySelector(".post-caption")
+          ?.textContent
+          .toLowerCase() || "";
 
 
-        post.style.display =
-          matches ? "flex" : "No such posts found";
-      });
+      const matches =
+        author.includes(searchValue) ||
+        location.includes(searchValue) ||
+        caption.includes(searchValue);
+
+
+      if (matches) {
+
+        post.style.display = "flex";
+
+        matchingPosts++;
+
+      } else {
+
+        post.style.display = "none";
+
+      }
+
     });
-  }
+
+
+    // Show "No such posts found"
+    // only when there are zero matches
+
+    noResults.style.display =
+      matchingPosts === 0 ? "block" : "none";
+
+  });
+
+}
 
 
 
