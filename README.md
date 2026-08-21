@@ -8,7 +8,7 @@ The project focuses on creating a modern social media interface with interactive
 
 ## 🚀 Live Demo
 
-🔗 **Live Demo:** [Add your Vercel URL here](https://ig-web-layout.vercel.app/)
+🔗 **Live Demo:** [Demo Link](https://ig-web-layout.vercel.app/)
 
 ---
 
