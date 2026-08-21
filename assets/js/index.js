@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const themeIcon = document.getElementById("themeIcon");
   const mobileThemeIcon = document.getElementById("mobileThemeIcon");
 
-  const searchInput = document.getElementById("search-Input");
+  const SearchInput = document.getElementById("search-Input");
   const feedGrid = document.getElementById("feedGrid");
 
   const createPostBtn = document.getElementById("openCreatePostModal");
@@ -262,12 +262,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-  if (searchInput) {
+  if (SearchInput) {
 
-    searchInput.addEventListener("input", () => {
+    SearchInput.addEventListener("input", () => {
 
       const searchValue =
-        searchInput.value.toLowerCase().trim();
+        SearchInput.value.toLowerCase().trim();
 
 
       const posts =
@@ -304,7 +304,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
         post.style.display =
-          matches ? "flex" : "none";
+          matches ? "flex" : "No such posts found";
       });
     });
   }
