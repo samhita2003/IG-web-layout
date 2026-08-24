@@ -718,7 +718,7 @@ img {
   width: 100%;
   background-color: var(--bg-hover);
   overflow: hidden;
-  padding-top: 100%;
+   aspect-ratio: 1 / 1;
 }
 
 .post-image {
